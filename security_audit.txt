@@ -1,0 +1,111 @@
+﻿===============================================================================
+                    SECURITY AUDIT REPORT - TechCorp AB
+===============================================================================
+
+Generated: 2025-10-26 10:15:37
+Audit Path: ./network_configs
+
+
+FILE INVENTORY
+--------------
+
+Total Files:     22
+Config Files:    7
+Log Files:       5
+Rule Files:      2
+Backup Files:    8
+
+Files Modified Last 7 Days: 21
+- SW-CORE-01.conf.bak (2025-10-16)
+- RT-EDGE-02.conf.bak (2025-10-16)
+- baseline-router.conf (2025-10-16)
+- SW-CORE-02.conf.bak (2025-10-16)
+- RT-EDGE-01.conf.bak (2025-10-16)
+- RT-LAGER-01.conf.bak (2025-10-16)
+- FW-DMZ-01.rules.bak (2025-10-16)
+- SW-CORE-01.conf.bak (2025-10-16)
+- RT-EDGE-01.conf.bak (2025-10-16)
+- security-2024-10-14.log (2024-10-14)
+- system-2024-10-14.log (2024-10-14)
+- access-2024-10-14.log (2024-10-14)
+- RT-EDGE-01.conf (2024-10-14)
+- SW-CORE-01.conf (2024-10-13)
+- system-2024-10-13.log (2024-10-13)
+- security-2024-10-13.log (2024-10-13)
+- FW-DMZ-01.rules (2024-10-12)
+- FW-DC-01.rules (2024-10-11)
+- RT-EDGE-02.conf (2024-10-10)
+- SW-CORE-02.conf (2024-10-09)
+- RT-LAGER-01.conf (2024-10-08)
+
+SECURITY FINDINGS
+-----------------
+
+Critical Issues Found: 15
+
+. Weak Passwords Detected:
+   - RT-EDGE-01.conf: "enable secret 5 $1$mERr$hx5rVt7rrb6Jg8yUqzPHr0" (line 7)
+   - RT-EDGE-02.conf: "enable password cisco123" (line 7)
+   - RT-LAGER-01.conf: "enable secret 5 $1$xyz$abcdef123456789" (line 7)
+   - SW-ACCESS-01.conf: "! ERROR: No enable secret configured" (line 7)
+   - SW-ACCESS-01.conf: "enable password password" (line 8)
+   - SW-CORE-01.conf: "username admin privilege 15 secret admin" (line 36)
+   - SW-CORE-02.conf: "enable password Password123" (line 7)
+
+. Default SNMP Communities:
+   - RT-EDGE-01.conf: "snmp-server community public RO" (line 27)
+   - RT-EDGE-01.conf: "snmp-server community private RW" (line 28)
+   - RT-EDGE-02.conf: "snmp-server community public RO" (line 22)
+   - RT-EDGE-02.conf: "snmp-server community private RW" (line 23)
+   - SW-ACCESS-01.conf: "snmp-server community public" (line 24)
+   - SW-ACCESS-01.conf: "snmp-server community private" (line 25)
+
+. Missing Encryption:
+   - FW-DC-01.rules: "# ERROR: Unencrypted web traffic allowed" (line 23)
+   - FW-DMZ-01.rules: "# Allow HTTP from anywhere to web servers - WARNING: Consider HTTPS only" (line 11)
+
+LOG ANALYSIS
+------------
+
+Errors in Last 24 Hours: 11
+- security-2024-10-14.log: 6 errors
+- system-2024-10-14.log: 5 errors
+
+Failed Login Attempts: 3
+- 1 attempts from 10.0.0.100
+- 2 attempts from 203.0.113.99
+
+
+MISSING BACKUPS
+---------------
+
+Files without recent backup (>7 days):
+- baseline-router.conf (no backup found)
+- FW-DC-01.rules (no backup found)
+- FW-DMZ-01.rules (last backup: 2025-10-16)
+- RT-EDGE-01.conf (last backup: 2025-10-16)
+- RT-EDGE-02.conf (last backup: 2025-10-16)
+- RT-LAGER-01.conf (last backup: 2025-10-16)
+- SW-ACCESS-01.conf (no backup found)
+- SW-CORE-01.conf (last backup: 2025-10-16)
+- SW-CORE-02.conf (last backup: 2025-10-16)
+
+BASELINE COMPLIANCE
+-------------------
+
+Deviations from baseline-router.conf:
+- RT-EDGE-01.conf: Missing "service password-encryption"
+- RT-EDGE-01.conf: Missing "no ip http server"
+- RT-EDGE-01.conf: Missing "no ip http secure-server"
+- RT-EDGE-01.conf: Missing "snmp-server community [COMPLEX-STRING] RO"
+- RT-EDGE-01.conf: Missing "ntp server [NTP-SERVER]"
+- RT-EDGE-02.conf: Missing "service password-encryption"
+- RT-EDGE-02.conf: Missing "no ip http server"
+- RT-EDGE-02.conf: Missing "no ip http secure-server"
+- RT-EDGE-02.conf: Missing "snmp-server community [COMPLEX-STRING] RO"
+- RT-EDGE-02.conf: Missing "ntp server [NTP-SERVER]"
+- RT-LAGER-01.conf: Missing "service password-encryption"
+- RT-LAGER-01.conf: Missing "no ip http server"
+- RT-LAGER-01.conf: Missing "no ip http secure-server"
+- RT-LAGER-01.conf: Missing "snmp-server community [COMPLEX-STRING] RO"
+- RT-LAGER-01.conf: Missing "ntp server [NTP-SERVER]"

@@ -1,0 +1,32 @@
+# Firewall Rules - FW-DMZ-01
+# Generated: 2024-10-12 09:00:00
+# Version: 2.3.1
+
+# Allow SSH from management network
+permit tcp 192.168.10.0/24 any eq 22 log
+
+# Allow HTTPS from anywhere to web servers
+permit tcp any 192.168.30.0/24 eq 443
+
+# Allow HTTP from anywhere to web servers - WARNING: Consider HTTPS only
+permit tcp any 192.168.30.0/24 eq 80
+
+# Database access - ERROR: Too permissive
+permit tcp any 192.168.30.0/24 eq 3306
+
+# Deny all other traffic
+deny ip any any log
+
+# NAT Rules
+nat (inside,outside) source static 192.168.30.10 203.0.113.20
+nat (inside,outside) source static 192.168.30.11 203.0.113.21
+
+# VPN Configuration
+crypto ipsec transform-set ESP-AES-256 esp-aes-256 esp-sha-hmac
+crypto map outside_map 1 set peer 198.51.100.1
+crypto map outside_map 1 set transform-set ESP-AES-256
+
+# Admin access
+ssh 192.168.10.0 255.255.255.0 inside
+ssh timeout 5
+ssh version 2

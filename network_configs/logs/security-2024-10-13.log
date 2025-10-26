@@ -1,0 +1,19 @@
+2024-10-13 08:00:01 INFO Security scan started
+2024-10-13 08:15:23 WARNING Weak password detected for user 'test'
+2024-10-13 08:30:45 INFO Port scan detected from 198.51.100.55
+2024-10-13 09:00:12 ERROR Authentication failed for user 'admin' from 10.0.0.99
+2024-10-13 09:00:15 ERROR Authentication failed for user 'admin' from 10.0.0.99
+2024-10-13 09:00:18 ERROR Authentication failed for user 'admin' from 10.0.0.99
+2024-10-13 09:00:22 WARNING Account locked: admin (too many failed attempts)
+2024-10-13 10:15:33 INFO Firewall rule added: deny tcp any any eq 445
+2024-10-13 11:30:44 WARNING Unauthorized SNMP request from 172.16.0.50
+2024-10-13 12:00:00 INFO Security audit: 3 vulnerabilities found
+2024-10-13 13:15:22 ERROR SSL certificate validation failed for 192.168.30.10
+2024-10-13 14:30:18 WARNING Potential SQL injection attempt from 203.0.113.200
+2024-10-13 15:45:33 INFO VPN connection established from 198.51.100.1
+2024-10-13 16:00:44 ERROR Access denied: unauthorized access to /admin from 10.0.0.75
+2024-10-13 17:15:12 WARNING DDoS attack suspected - 5000 requests/sec from 203.0.113.150
+2024-10-13 18:30:55 INFO IDS signature update completed
+2024-10-13 19:45:22 ERROR Failed to verify signature for firmware update
+2024-10-13 20:00:18 WARNING Password will expire in 7 days for user 'netadmin'
+2024-10-13 21:15:44 INFO Security scan completed: 127 issues found

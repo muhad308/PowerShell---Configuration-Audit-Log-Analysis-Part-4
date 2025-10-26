@@ -1,0 +1,7 @@
+﻿"FileName","FullPath","SizeKB","LastModified","FileType","HasBackup"
+"RT-EDGE-01.conf","C:\Users\Muhad\PowerShell---Configuration-Audit-Log-Analysis-Part-4\network_configs\routers\RT-EDGE-01.conf","0.8","2024-10-14 00:00:00","router","True"
+"RT-EDGE-02.conf","C:\Users\Muhad\PowerShell---Configuration-Audit-Log-Analysis-Part-4\network_configs\routers\RT-EDGE-02.conf","0.6","2024-10-10 00:00:00","router","True"
+"RT-LAGER-01.conf","C:\Users\Muhad\PowerShell---Configuration-Audit-Log-Analysis-Part-4\network_configs\routers\RT-LAGER-01.conf","0.6","2024-10-08 00:00:00","router","True"
+"SW-ACCESS-01.conf","C:\Users\Muhad\PowerShell---Configuration-Audit-Log-Analysis-Part-4\network_configs\switches\SW-ACCESS-01.conf","0.5","2024-09-28 00:00:00","switch","False"
+"SW-CORE-01.conf","C:\Users\Muhad\PowerShell---Configuration-Audit-Log-Analysis-Part-4\network_configs\switches\SW-CORE-01.conf","0.8","2024-10-13 00:00:00","switch","True"
+"SW-CORE-02.conf","C:\Users\Muhad\PowerShell---Configuration-Audit-Log-Analysis-Part-4\network_configs\switches\SW-CORE-02.conf","0.6","2024-10-09 00:00:00","switch","True"

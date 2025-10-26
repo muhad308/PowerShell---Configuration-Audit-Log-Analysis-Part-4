@@ -1,0 +1,22 @@
+2024-10-14 00:15:23 INFO System startup completed
+2024-10-14 00:16:45 INFO SNMP agent started on 192.168.1.1
+2024-10-14 01:30:12 WARNING High CPU usage detected: 85%
+2024-10-14 02:45:33 INFO Backup job started
+2024-10-14 03:15:44 INFO Backup job completed successfully
+2024-10-14 04:22:18 ERROR Failed to connect to NTP server 10.0.0.5
+2024-10-14 05:30:22 WARNING Memory usage above threshold: 78%
+2024-10-14 06:00:00 INFO Daily maintenance window started
+2024-10-14 06:15:33 INFO Configuration backup saved
+2024-10-14 07:45:12 ERROR Interface GigabitEthernet0/2 down
+2024-10-14 08:00:45 WARNING Multiple login failures from 10.0.0.50
+2024-10-14 08:30:22 INFO Interface GigabitEthernet0/2 up
+2024-10-14 09:15:44 ERROR Cannot write to log file: disk full
+2024-10-14 10:00:00 WARNING Temperature sensor reading: 65C
+2024-10-14 11:30:15 INFO User admin logged in from 192.168.10.25
+2024-10-14 12:45:33 ERROR OSPF neighbor 192.168.1.254 down
+2024-10-14 13:00:22 WARNING Unusual traffic pattern detected from 203.0.113.100
+2024-10-14 14:15:18 INFO Configuration changed by user admin
+2024-10-14 15:30:44 ERROR Power supply 2 failure detected
+2024-10-14 16:00:12 INFO OSPF neighbor 192.168.1.254 up
+2024-10-14 17:45:33 WARNING Certificate expires in 30 days
+2024-10-14 18:30:22 INFO Scheduled reboot initiated

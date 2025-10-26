@@ -1,0 +1,41 @@
+# Firewall Rules - FW-DC-01
+# Generated: 2024-10-11 12:00:00
+# Version: 3.1.0
+# Location: Datacenter
+
+# Management Access
+permit tcp 192.168.10.0/24 any eq 22 log
+permit tcp 192.168.10.0/24 any eq 443 log
+
+# Server to Server Communication
+permit tcp 192.168.30.0/24 192.168.30.0/24 eq 3306
+permit tcp 192.168.30.0/24 192.168.30.0/24 eq 5432
+
+# WARNING: Any to Any rule detected
+permit ip 192.168.30.0/24 any
+
+# DNS Access
+permit udp any any eq 53
+
+# Web Services
+permit tcp any 192.168.30.10 eq 443
+permit tcp any 192.168.30.11 eq 443
+# ERROR: Unencrypted web traffic allowed
+permit tcp any 192.168.30.12 eq 80
+
+# Database Replication
+permit tcp 192.168.30.20 203.0.113.50 eq 3306
+
+# Default Deny
+deny ip any any log
+
+# NAT Configuration
+nat (inside,outside) source dynamic 192.168.30.0/24 interface
+
+# VPN Settings
+crypto ipsec ikev2 ipsec-proposal AES256
+crypto map outside_map 1 match address vpn-acl
+crypto map outside_map 1 set peer 198.51.100.10
+
+# WARNING: Weak encryption for legacy VPN
+crypto ipsec transform-set LEGACY esp-3des esp-md5-hmac
